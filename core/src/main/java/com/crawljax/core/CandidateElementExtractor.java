@@ -124,7 +124,7 @@ public class CandidateElementExtractor {
 			LOG.info("State {} did not satisfy the CrawlConditions.", currentState.getName());
 			return ImmutableList.of();
 		}
-		LOG.debug("Looking in state: {} for candidate elements", currentState.getName());
+		LOG.debug("Looking in state: {}, url: {} for candidate elements; DOM {}", currentState.getName(), currentState.getUrl(), currentState.getDom());
 
 		try {
 			Document dom = DomUtils.asDocument(browser.getStrippedDomWithoutIframeContent());

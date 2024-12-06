@@ -289,7 +289,9 @@ public class Crawler {
 		} else {
 			LOG.info("Found an invisible link with href={}", href);
 			URI url = UrlUtils.extractNewUrl(browser.getCurrentUrl(), href);
+      LOG.info("Current browser url {}, go to url {}", browser.getCurrentUrl(), url);
 			browser.goToUrl(url);
+      LOG.info("Current url {} after goToUrl {}", browser.getCurrentUrl(), url);
 			return true;
 		}
 		return false;
